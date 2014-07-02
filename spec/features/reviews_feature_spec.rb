@@ -12,4 +12,6 @@ describe 'writing reviews' do
 
 		expect(page).to have_content 'Not great (2)'
 	end
+
+	
 end

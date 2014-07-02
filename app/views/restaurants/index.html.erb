@@ -1,14 +1,18 @@
+<h1>Yelp</h1>
 <% if @restaurants.any? %>
 <ul>
 	<% @restaurants.each do |r| %>
-	<li><%= r.name %>
-		<% r.reviews.each do |review| %>
-		<%= review.thoughts %> (<%= review.rating %>)
-		<% end %>
-		<%= link_to "Edit #{r.name}", edit_restaurant_path(r.id) %>
-		<%= link_to "Delete #{r.name}", restaurant_path(r.id), method: :delete %>
-		<%= link_to "Review #{r.name}", new_restaurant_review_path(r.id) %>
+	<li><%= r.name %> (<%= r.cuisine %>)
+		<ul>
+			<li><%= link_to "Edit #{r.name}", edit_restaurant_path(r.id) %></li>
+			<li><%= link_to "Delete #{r.name}", restaurant_path(r.id), method: :delete %></li>
+			<li><%= link_to "Review #{r.name}", new_restaurant_review_path(r.id) %></li>
+		</ul>
 	</li>
+	<span><%= r.name %> reviews:<br>
+	<% r.reviews.each do |review| %>
+	<%= review.thoughts %> (<%= review.rating %>)<br>
+	<% end %><br>
 	<% end %>
 </ul>
 <% else %>

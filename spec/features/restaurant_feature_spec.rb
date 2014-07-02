@@ -25,9 +25,11 @@ describe 'restaurant creation form' do
 		visit '/restaurants/new'
 
 		fill_in 'Name', with: 'Burger King'
+		fill_in 'Cuisine', with: 'Fast Food'
 		click_button 'Create Restaurant'
 
 		expect(current_path).to eq '/restaurants'
+		expect(page).to have_content 'Burger King'
 		expect(page).to have_content 'Burger King'
 	end 	
 end
