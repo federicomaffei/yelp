@@ -33,6 +33,7 @@ end
 
 group :test do
 	gem 'launchy'
+	gem 'rspec-collection_matchers'
 end
 
 # Use ActiveModel has_secure_password

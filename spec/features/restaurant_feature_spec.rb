@@ -10,7 +10,7 @@ describe 'restaurants listing page' do
 
 	context 'are restaurants' do
 		before do
-			Restaurant.create(name: 'Ledbury')
+			Restaurant.create(name: 'Ledbury', cuisine: 'French')
 		end
 
 		it 'should show the restaurant' do
@@ -21,25 +21,42 @@ describe 'restaurants listing page' do
 end
 
 describe 'restaurant creation form' do
-	it 'should be able to create a restaurant' do
-		visit '/restaurants/new'
+	context 'input is valid' do
+		it 'should be able to create a restaurant' do
+			visit '/restaurants/new'
 
-		fill_in 'Name', with: 'Burger King'
-		fill_in 'Cuisine', with: 'Fast Food'
-		click_button 'Create Restaurant'
+			fill_in 'Name', with: 'Burger King'
+			fill_in 'Cuisine', with: 'Fast Food'
+			click_button 'Create Restaurant'
 
-		expect(current_path).to eq '/restaurants'
-		expect(page).to have_content 'Burger King'
-		expect(page).to have_content 'Burger King'
-	end 	
+			expect(current_path).to eq '/restaurants'
+			expect(page).to have_content 'Burger King (Fast Food)'
+		end
+	end
+
+	context 'input is not valid' do
+		it 'should be able to create a restaurant' do
+			visit '/restaurants/new'
+
+			fill_in 'Name', with: 'burger King'
+			fill_in 'Cuisine', with: 'ff'
+			click_button 'Create Restaurant'
+
+			expect(current_path).to eq '/restaurants'
+			expect(page).not_to have_content 'burger King (ff)'
+			expect(page).to have_content 'Errors'
+		end
+	end
+
 end
 
 describe 'restaurant edit form' do
-	before {Restaurant.create name: 'KFC'}
-	it 'shound be able to edit a restaurant' do
+	before {Restaurant.create name: 'KFC', cuisine: 'Fast Food'}
+	it 'should be able to edit a restaurant' do
 		visit '/restaurants'
 		click_link 'Edit KFC'
 		fill_in 'Name', with: 'Kentucky Fried Chicken'
+		fill_in 'Cuisine', with: 'Fast Food'
 
 		click_button 'Update Restaurant'
 

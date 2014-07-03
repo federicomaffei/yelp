@@ -4,19 +4,20 @@
 	<% @restaurants.each do |r| %>
 	<li><%= r.name %> (<%= r.cuisine %>)
 		<ul>
+			<li>Average rating: <%= star_rating(r.average_rating) %></li>
 			<li><%= link_to "Edit #{r.name}", edit_restaurant_path(r.id) %></li>
 			<li><%= link_to "Delete #{r.name}", restaurant_path(r.id), method: :delete %></li>
 			<li><%= link_to "Review #{r.name}", new_restaurant_review_path(r.id) %></li>
 		</ul>
 	</li>
 	<span><%= r.name %> reviews:<br>
-	<% r.reviews.each do |review| %>
-	<%= review.thoughts %> (<%= review.rating %>)<br>
-	<% end %><br>
+		<% r.reviews.each do |review| %>
+		<%= review.thoughts %> (<%= star_rating(review.rating) %>)<br>
+		<% end %><br>
+		<% end %>
+	</ul>
+	<% else %>
+
+	<h1>No restaurants yet.</h1>
+ 
 	<% end %>
-</ul>
-<% else %>
-
-<h1>No restaurants yet.</h1>
-
-<% end %>

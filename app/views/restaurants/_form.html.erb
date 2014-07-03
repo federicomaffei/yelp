@@ -1,11 +1,23 @@
+<% if @restaurant.errors.any? %>
+<div id ='error-list'>
+<h2>Errors in submission:</h2>
+	<ul>
+		<%@restaurant.errors.full_messages.each do |message|%>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+
 <%= form_for @restaurant do |f| %>
 
-	<%= f.label :name %>
-	<%= f.text_field :name%>
+<%= f.label :name %>
+<%= f.text_field :name%>
 
-	<%= f.label :cuisine %>
-	<%= f.text_field :cuisine %>
+<%= f.label :cuisine %>
+<%= f.text_field :cuisine %>
 
-	<%= f.submit %>
+<%= f.submit %>
 
 <% end %>
