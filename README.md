@@ -1,7 +1,7 @@
 My-Yelp
 ====================
 
-My-Yelp is the Week 8 project I worked on at [Makers Academy](http://www.makersacademy.com).
+Yelp is the Week 8 project I worked on at [Makers Academy](http://www.makersacademy.com).
 This application's purpose is being a clone of Yelp, a restaurant listing and rating service. This has been our introduction to Rails, focusing especially on:
 
 * Creating Rails applications
