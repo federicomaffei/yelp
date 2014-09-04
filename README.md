@@ -15,24 +15,24 @@ This application's purpose is being a clone of Yelp, a restaurant listing and ra
 
 The project has been developed through 4 versions:
 
-	1. MVP - For the initial version the core functionality of Yelp has been duplicated - users are presented with a list of restaurants which they can leave reviews for. The features developed via TDD in this iteration are:
-		- Visitors can create new restaurants using a form, specifying a name and cuisine.
-		- Restaurants can be edited and deleted.
-		- Visitors can leave reviews for restaurants, providing a numerical score (1-5) and a comment about their experience.
-		- The restaurants listings page should display all the reviews, along with the average rating of each restaurant.
-		- Restaurants must be given a name and cuisine, reviews must be given a rating from 1-5 (comment is optional).
+1. MVP - For the initial version the core functionality of Yelp has been duplicated - users are presented with a list of restaurants which they can leave reviews for. The features developed via TDD in this iteration are:
+	- Visitors can create new restaurants using a form, specifying a name and cuisine.
+	- Restaurants can be edited and deleted.
+	- Visitors can leave reviews for restaurants, providing a numerical score (1-5) and a comment about their experience.
+	- The restaurants listings page should display all the reviews, along with the average rating of each restaurant.
+	- Restaurants must be given a name and cuisine, reviews must be given a rating from 1-5 (comment is optional).
 
-	2. Version 2 - adding user login via [Devise](https://github.com/makersacademy/Walkthroughs/blob/master/devise.md). The features developed via TDD in this iteration are:
-		- Users can register/login
-		- A user must be logged in to create restaurants.
-		- Users can only edit/delete restaurants which they've created.
-		- Users can only leave one review per restaurant.
-		- Users can delete their own reviews.
-		- Some indication should be given on the page (as part of the layout) whether the user is currently logged in, along with links to the available actions.
-		- The email address of the reviewer should be displayed as part of the review.
-		- Users can't review a restaurant which they created.
+2. Version 2 - adding user login via [Devise](https://github.com/makersacademy/Walkthroughs/blob/master/devise.md). The features developed via TDD in this iteration are:
+	- Users can register/login
+	- A user must be logged in to create restaurants.
+	- Users can only edit/delete restaurants which they've created.
+	- Users can only leave one review per restaurant.
+	- Users can delete their own reviews.
+	- Some indication should be given on the page (as part of the layout) whether the user is currently logged in, along with links to the available actions.
+	- The email address of the reviewer should be displayed as part of the review.
+	- Users can't review a restaurant which they created.
 
-	3. Version 3 - Enhanced UX with Rails helper methods and AJAX.
+3. Version 3 - Enhanced UX with Rails helper methods and AJAX.
 
 ====================
 
