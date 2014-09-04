@@ -13,7 +13,7 @@ This application's purpose is being a clone of Yelp, a restaurant listing and ra
 
 ====================
 
-The project has been developed through 3 iterations:
+##The project has been developed through 3 iterations:
 
 ##MVP
 For the initial version the core functionality of Yelp has been duplicated - users are presented with a list of restaurants which they can leave reviews for. The features developed via TDD in this iteration are:
@@ -43,7 +43,7 @@ Enhanced UX with Rails helper methods and AJAX. The features developed in this i
 
 ====================
 
-The programming languages and technologies I used are:
+###The programming languages and technologies I used are:
 
   * Ruby
 
@@ -61,11 +61,11 @@ The programming languages and technologies I used are:
 
 ====================
 
-How to run the application:
+###How to run the application:
 
   * In the browser enter: [http://appname.herokuapp.com/](http://appname.herokuapp.com/)
 
-How to test the application:
+###How to test the application:
 
   * From command line enter:
 ```bash
@@ -76,8 +76,6 @@ rspec
 
 ====================
 
-Possible future adds to the features:
+###Possible future adds to the features:
 
- * 
-
- * 
+ * The possibility to add an image or more along with a new restaurant.
