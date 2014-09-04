@@ -1,28 +1,77 @@
-== README
+My-Yelp
+====================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My-Yelp is the Week 8 project I worked on at [Makers Academy](http://www.makersacademy.com).
+This application's purpose is being a clone of Yelp, a restaurant listing and rating service. This has been our introduction to Rails, focusing especially on:
 
-Things you may want to cover:
+* Creating Rails applications
+* The structure of Rails apps (models, views, controllers, the router, helpers)
+* TDD on Rails, with RSpec & Capybara
+* Associations in Rails
+* Validations
+* AJAX in Rails
 
-* Ruby version
+====================
 
-* System dependencies
+The project has been developed through 4 versions:
 
-* Configuration
+	1. MVP - For the initial version the core functionality of Yelp has been duplicated - users are presented with a list of restaurants which they can leave reviews for. TDD development has been used, with both feature and unit tests.
 
-* Database creation
+	2. Version 2 - adding user login via [Devise](https://github.com/makersacademy/Walkthroughs/blob/master/devise.md).
 
-* Database initialization
+	3. Version 3 - Enhanced UX with Rails helper methods and AJAX.
 
-* How to run the test suite
+====================
 
-* Services (job queues, cache servers, search engines, etc.)
+The features I implemented via TDD are:
 
-* Deployment instructions
+  1. As a User, when browsing the homepage, I can add a link, complete with tags.
 
-* ...
+  2. As a User, when browsing the search page, I can filter the links by tag.
 
+  3. As a User, I can sign in, and have my credentials checked as email and password.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  4. As a User, I can sign up.
+
+  5. As a User, I can sign out.
+
+====================
+
+The programming languages and technologies I used are:
+
+  * Ruby
+
+  * Rspec
+
+  * Rails framework
+
+  * Capybara
+
+  * AJAX
+
+  * Devise
+
+  * JBuilder
+
+====================
+
+How to run the application:
+
+  * In the browser enter: [http://appname.herokuapp.com/](http://appname.herokuapp.com/)
+
+How to test the application:
+
+  * From command line enter:
+```bash
+git clone git@github.com:federicomaffei/yelp.git
+cd yelp
+rspec
+```
+
+====================
+
+Possible future adds to the features:
+
+ * 
+
+ * 
