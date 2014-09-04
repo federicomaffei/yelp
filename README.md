@@ -1,7 +1,7 @@
 My-Yelp
 ====================
 
-Yelp is the Week 8 project I worked on at [Makers Academy](http://www.makersacademy.com).
+My-Yelp is the Week 8 project I worked on at [Makers Academy](http://www.makersacademy.com).
 This application's purpose is being a clone of Yelp, a restaurant listing and rating service. This has been our introduction to Rails, focusing especially on:
 
 * Creating Rails applications
@@ -32,7 +32,11 @@ The project has been developed through 4 versions:
 	- The email address of the reviewer should be displayed as part of the review.
 	- Users can't review a restaurant which they created.
 
-3. Version 3 - Enhanced UX with Rails helper methods and AJAX.
+3. Version 3 - Enhanced UX with Rails helper methods and AJAX. The features developed in this iteration are:
+	- Currently, when writing a review, we have to go to a separate page and trigger a page refresh. Migrate the functionality to happen asynchronously with AJAX. We'll also have to set up [Poltergeist](https://github.com/teampoltergeist/poltergeist) to enable us to run JS-enabled tests.
+    - Create a helper method to allow ratings and average ratings to be displayed as stars (e.g.) rather than numbers.
+	- Use CSS to enhance the overall design of the site.
+	- Refactor your more complex views to use partials.
 
 ====================
 
