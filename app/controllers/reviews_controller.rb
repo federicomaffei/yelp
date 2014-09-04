@@ -7,9 +7,16 @@ class ReviewsController < ApplicationController
 
 	def create
 		@restaurant = Restaurant.find params[:restaurant_id]
-		@review = @restaurant.reviews.create params[:review].permit(:thoughts, :rating)
-		flash[:notice] = 'Review created!'
-		redirect_to '/restaurants'
+		@review = @restaurant.reviews.new params[:review].permit(:thoughts, :rating)
+		if @restaurant.reviews.find_by user_id: current_user.id
+			flash[:notice] = 'You already left a review of this restaurant!'
+			redirect_to '/restaurants'
+		else
+			@review.user = current_user
+			@review.save
+			flash[:notice] = 'Review created!'
+			redirect_to '/restaurants'
+		end
 	end
 
 end

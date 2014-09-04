@@ -1,6 +1,6 @@
 <% if @restaurant.errors.any? %>
 <div id ='error-list'>
-<h2>Errors in submission:</h2>
+<h2>Errors in submission:</h2>	
 	<ul>
 		<%@restaurant.errors.full_messages.each do |message|%>
 		<li><%= message %></li>
@@ -9,7 +9,7 @@
 </div>
 <% end %>
 
-
+<% if user_signed_in? %>
 <%= form_for @restaurant do |f| %>
 
 <%= f.label :name %>
@@ -19,5 +19,6 @@
 <%= f.text_field :cuisine %>
 
 <%= f.submit %>
+<% end %>
 
 <% end %>

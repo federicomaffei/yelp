@@ -21,54 +21,12 @@ describe 'restaurants listing page' do
 end
 
 describe 'restaurant creation form' do
-	context 'input is valid' do
-		it 'should be able to create a restaurant' do
-			visit '/restaurants/new'
 
-			fill_in 'Name', with: 'Burger King'
-			fill_in 'Cuisine', with: 'Fast Food'
-			click_button 'Create Restaurant'
-
-			expect(current_path).to eq '/restaurants'
-			expect(page).to have_content 'Burger King (Fast Food)'
+	context 'logged out' do
+		it 'should forward user to sign in page' do
+			visit '/restaurants'
+			click_link 'Create Restaurant'
+			expect(page).to have_content 'Sign in'
 		end
-	end
-
-	context 'input is not valid' do
-		it 'should be able to create a restaurant' do
-			visit '/restaurants/new'
-
-			fill_in 'Name', with: 'burger King'
-			fill_in 'Cuisine', with: 'ff'
-			click_button 'Create Restaurant'
-
-			expect(current_path).to eq '/restaurants'
-			expect(page).not_to have_content 'burger King (ff)'
-			expect(page).to have_content 'Errors'
-		end
-	end
-
-end
-
-describe 'restaurant edit form' do
-	before {Restaurant.create name: 'KFC', cuisine: 'Fast Food'}
-	it 'should be able to edit a restaurant' do
-		visit '/restaurants'
-		click_link 'Edit KFC'
-		fill_in 'Name', with: 'Kentucky Fried Chicken'
-		fill_in 'Cuisine', with: 'Fast Food'
-
-		click_button 'Update Restaurant'
-
-		expect(current_path).to eq '/restaurants'
-		expect(page).to have_content 'Kentucky Fried Chicken'
-
-	end
-
-	it 'can delete restaurants' do
-		visit '/restaurants'
-		click_link 'Delete KFC'
-		expect(page).not_to have_content 'KFC'
-		expect(page).to have_content 'Restaurant successfully deleted'
 	end
 end

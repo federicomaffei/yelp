@@ -1,13 +1,15 @@
 <h1>Yelp</h1>
 <% if @restaurants.any? %>
-<ul>
+<ul> 
 	<% @restaurants.each do |r| %>
 	<li><%= r.name %> (<%= r.cuisine %>)
 		<ul>
 			<li>Average rating: <%= star_rating(r.average_rating) %></li>
+			<% if user_signed_in? %>
 			<li><%= link_to "Edit #{r.name}", edit_restaurant_path(r.id) %></li>
 			<li><%= link_to "Delete #{r.name}", restaurant_path(r.id), method: :delete %></li>
 			<li><%= link_to "Review #{r.name}", new_restaurant_review_path(r.id) %></li>
+			<% end %>
 		</ul>
 	</li>
 	<span><%= r.name %> reviews:<br>
@@ -21,3 +23,5 @@
 	<h1>No restaurants yet.</h1>
  
 	<% end %>
+
+	<%= link_to 'Create Restaurant', new_restaurant_path %>
