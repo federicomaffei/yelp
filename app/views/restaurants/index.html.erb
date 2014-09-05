@@ -1,27 +1,36 @@
 <h1>Yelp</h1>
 <% if @restaurants.any? %>
-<ul> 
+<ul>
 	<% @restaurants.each do |r| %>
-	<li><%= r.name %> (<%= r.cuisine %>)
-		<ul>
-			<li>Average rating: <%= star_rating(r.average_rating) %></li>
-			<% if user_signed_in? %>
-			<li><%= link_to "Edit #{r.name}", edit_restaurant_path(r.id) %></li>
-			<li><%= link_to "Delete #{r.name}", restaurant_path(r.id), method: :delete %></li>
-			<li><%= link_to "Review #{r.name}", new_restaurant_review_path(r.id) %></li>
-			<% end %>
-		</ul>
+	<li>
+		<%= r.name %> (<%= r.cuisine %>)
 	</li>
-	<span><%= r.name %> reviews:<br>
+	Average rating: <%= star_rating(r.average_rating) %><br>
+	<% if user_signed_in? %>
+	<%= link_to "Edit #{r.name}", edit_restaurant_path(r.id) %><br>
+	<%= link_to "Delete #{r.name}", restaurant_path(r.id), method: :delete %><br>
+	<%= link_to "Review #{r.name}", new_restaurant_review_path(r.id) %><br>
+	<% end %>
+	<%= r.name %> reviews:<br>
+	<ul class='reviews'>
 		<% r.reviews.each do |review| %>
-		<%= review.thoughts %> (<%= star_rating(review.rating) %>)<br>
-		<% end %><br>
+		<li>
+			<%= review.thoughts %> (<%= star_rating review.rating %>)
+		</li>
 		<% end %>
 	</ul>
-	<% else %>
-
-	<h1>No restaurants yet.</h1>
- 
+	<% if user_signed_in? %>
+	<%= form_for [r, @review] do |r| %>
+		<%= r.label :thoughts %>
+		<%= r.text_field :thoughts%>
+		<%= r.label :rating %>
+		<%= r.select :rating, 1..5 %>
+		<%= r.submit %>
+		<% end %><br>
+		<% end %>
 	<% end %>
-
-	<%= link_to 'Create Restaurant', new_restaurant_path %>
+</ul>
+<% else %>
+<h1>No restaurants yet.</h1>
+<% end %>
+<%= link_to 'Create Restaurant', new_restaurant_path %>

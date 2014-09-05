@@ -14,8 +14,7 @@ class ReviewsController < ApplicationController
 		else
 			@review.user = current_user
 			@review.save
-			flash[:notice] = 'Review created!'
-			redirect_to '/restaurants'
+			render json: @review
 		end
 	end
 
