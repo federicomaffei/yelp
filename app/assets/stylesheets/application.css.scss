@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+ $blue: #25A497;
+
+ .button {
+ 	background: $blue;
+ 	display: inline-block;
+ 	color: #fff;
+ 	padding: 10px;
+ 	text-decoration: none;
+ }
+
+ body {
+ 	margin: 0;
+ 	font-family: 'Alegreya Sans', sans-serif;
+ 	font-size: 20px;
+ }
+
+ nav {
+ 	padding: 10px;
+ 	background: #eee;
+
+ 	.link {
+ 		@extend .button;
+ 	}
+
+ 	.logo {
+ 		padding-right: 40px;
+ 		font-size: 30px;
+ 		font-family: 'Lilita One', cursive;
+ 		text-decoration: none;
+ 		&:visited {
+ 			color: #000;
+ 		}
+ 	}
+ }
+

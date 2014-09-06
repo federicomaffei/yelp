@@ -1,4 +1,3 @@
-<h1>Yelp</h1>
 <% if @restaurants.any? %>
 <ul>
 	<% @restaurants.each do |r| %>
@@ -32,4 +31,3 @@
 <% else %>
 <h1>No restaurants yet.</h1>
 <% end %>
-<%= link_to 'Create Restaurant', new_restaurant_path %>
