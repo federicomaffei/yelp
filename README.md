@@ -11,6 +11,8 @@ This application's purpose is being a clone of Yelp, a restaurant listing and ra
 * Validations
 * AJAX in Rails
 
+![YELP](https://dl.dropboxusercontent.com/u/9315601/fedyelp.png)
+
 ====================
 
 ##The features I implemented via TDD are:
