@@ -1,7 +1,7 @@
 My-Yelp
 ====================
 
-My-Yelp is the Week 8 project I worked on at [Makers Academy](http://www.makersacademy.com).
+My-Yelp is the Week 8 project I worked on at [Makers Academy](http://www.makersacademy.com). It's reachable on [Heroku](http://fedyelp.herokuapp.com/).
 This application's purpose is being a clone of Yelp, a restaurant listing and rating service. This has been our introduction to Rails, focusing especially on:
 
 * Creating Rails applications
@@ -62,11 +62,13 @@ Enhanced UX with Rails helper methods and AJAX. The features developed in this i
 
   * JBuilder
 
+  * SCSS
+
 ====================
 
 ###How to run the application:
 
-  * In the browser enter: [http://appname.herokuapp.com/](http://appname.herokuapp.com/)
+  * In the browser enter: [http://fedyelp.herokuapp.com/](http://fedyelp.herokuapp.com/)
 
 ###How to test the application:
 
