@@ -28,21 +28,27 @@
  	margin: 0;
  	font-family: 'Alegreya Sans', sans-serif;
  	font-size: 20px;
+ 	#wrapper {
+ 		max-width:1280px;
+ 		width:95%;
+ 		margin:0 auto;  
+ 	}
  }
 
  nav {
  	padding: 10px;
- 	background: #eee;
-
+ 	display: flex;
+ 	justify-content: space-between;
  	.link {
+ 		align-self: flex-end;
  		@extend .button;
  	}
-
  	.logo {
  		padding-right: 40px;
  		font-size: 30px;
  		font-family: 'Lilita One', cursive;
  		text-decoration: none;
+ 		align-self: center;
  		&:visited {
  			color: #000;
  		}

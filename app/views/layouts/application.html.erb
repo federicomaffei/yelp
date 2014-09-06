@@ -10,18 +10,22 @@
 </head>
 <body>
   <nav>
-    <span><a href='/' class='logo'>Yelp</a></span>
-    <% if user_signed_in? %>
-    <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: 'link') %>
-    <%= link_to('Edit User Details', edit_user_registration_path, class: 'link') %>
-    <% else %>
-    <%= link_to('Login', new_user_session_path, class: 'link')  %>
-    <%= link_to('Sign Up', new_user_registration_path, class: 'link')  %>
-    <% end %>
-    <%= link_to 'Create Restaurant', new_restaurant_path, class: 'link' %>
+    <a href='/' class='logo'>Yelp</a>
+    <span class='user_menu'>
+      <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: 'link') %>
+      <%= link_to('Edit User Details', edit_user_registration_path, class: 'link') %>
+      <% else %>
+      <%= link_to('Login', new_user_session_path, class: 'link')  %>
+      <%= link_to('Sign Up', new_user_registration_path, class: 'link')  %>
+      <% end %>
+      <%= link_to 'Create Restaurant', new_restaurant_path, class: 'link' %>
+    </span>
   </nav>
-  <%= notice %>
-  <%= alert %>
-  <%= yield %>
+  <div id='wrapper'>
+    <%= notice %>
+    <%= alert %>
+    <%= yield %>
+  </div>
 </body>
 </html>
