@@ -26,12 +26,23 @@
 
  body {
  	margin: 0;
- 	font-family: 'Alegreya Sans', sans-serif;
+ 	font-family: 'Abel', sans-serif;
  	font-size: 20px;
  	#wrapper {
  		max-width:1280px;
  		width:95%;
  		margin:0 auto;  
+ 	}
+ 	#restaurant_listing {
+ 		list-style-type:none;
+ 		.restaurant {
+ 			padding: 20px;
+ 			margin: 10px;
+ 			line-height: 1.3em;
+ 			border: 2px dashed #000;
+ 			border-radius: 10px;
+ 			font-weight: normal;
+ 		}
  	}
  }
 
