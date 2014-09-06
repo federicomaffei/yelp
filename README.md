@@ -81,4 +81,4 @@ rspec
 
 ###Possible future adds to the features:
 
- * The possibility to add an image or more along with a new restaurant.
+ * The possibility to add an image or more when creating a new restaurant.

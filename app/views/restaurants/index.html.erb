@@ -3,9 +3,8 @@
 <ul>
 	<% @restaurants.each do |r| %>
 	<li>
-		<%= r.name %> (<%= r.cuisine %>)
-	</li>
-	Average rating: <%= star_rating(r.average_rating) %><br>
+	<%= r.name %> (<%= r.cuisine %>)<br>
+	<span class='average_rating'>Average rating: <%= star_rating(r.average_rating) %></span><br>
 	<% if user_signed_in? %>
 	<%= link_to "Edit #{r.name}", edit_restaurant_path(r.id) %><br>
 	<%= link_to "Delete #{r.name}", restaurant_path(r.id), method: :delete %><br>
@@ -29,6 +28,7 @@
 		<% end %><br>
 		<% end %>
 	<% end %>
+	</li>
 </ul>
 <% else %>
 <h1>No restaurants yet.</h1>

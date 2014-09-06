@@ -14,7 +14,6 @@ class ReviewsController < ApplicationController
 		else
 			@review.user = current_user
 			@review.save
-			render json: @review
 		end
 	end
 
