@@ -10,6 +10,7 @@ This application's purpose is being a clone of Yelp, a restaurant listing and ra
 * Associations in Rails
 * Validations
 * AJAX in Rails
+* Use of SCSS to change the appearance of the page
 
 ![YELP](https://dl.dropboxusercontent.com/u/9315601/fedyelp.png)
 
