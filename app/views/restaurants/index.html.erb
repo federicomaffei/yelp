@@ -20,7 +20,7 @@
 		<% if user_signed_in? %>
 		<%= form_for [r, @review] do |r| %>
 		<%= r.label :thoughts %>
-		<%= r.text_field :thoughts%>
+		<%= r.text_field :thoughts%><br>
 		<%= r.label :rating %>
 		<%= r.select :rating, 1..5 %>
 		<%= r.submit %>
