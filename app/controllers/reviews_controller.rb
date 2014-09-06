@@ -14,6 +14,7 @@ class ReviewsController < ApplicationController
 		else
 			@review.user = current_user
 			@review.save
+			redirect_to '/restaurants' unless request.xhr?
 		end
 	end
 

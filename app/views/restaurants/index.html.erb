@@ -2,8 +2,7 @@
 <% if @restaurants.any? %>
 <ul>
 	<% @restaurants.each do |r| %>
-	<li>
-	<%= r.name %> (<%= r.cuisine %>)<br>
+	<li class='restaurant'><%= r.name %> (<%= r.cuisine %>)<br>
 	<span class='average_rating'>Average rating: <%= star_rating(r.average_rating) %></span><br>
 	<% if user_signed_in? %>
 	<%= link_to "Edit #{r.name}", edit_restaurant_path(r.id) %><br>
