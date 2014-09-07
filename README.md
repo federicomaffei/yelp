@@ -61,8 +61,6 @@ Enhanced UX with Rails helper methods and AJAX. The features developed in this i
 
   * AJAX
 
-  * Devise
-
   * JBuilder
 
   * SCSS
